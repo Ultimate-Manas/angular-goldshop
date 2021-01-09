@@ -1,15 +1,21 @@
-<h3>Login Goldshop</h3>
-<table>
-	<tr>
-		<td>Username:</td>
-		<td>
-			<input type='text' [(ngModel)]='username'/>
+<h3>Login Gold-shop</h3>
+	<table>
+		<tr>
+			<td>Username:</td>
+			<td>
+				<input type='text' [(ngModel)]='username'/>
     </td>
-	</tr>
-	<tr>
-		<td>Password:</td>
-		<td>
-			<input type='text' [(ngModel)]='userpass'/>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td>
+				<input type='text' [(ngModel)]='userpass'/>
     </td>
-	</tr>
-</table>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type='button' (click)='login()' value='Login' [disabled]="username=='' || userpass==''"/>
+    </td>
+		</tr>
+	</table>

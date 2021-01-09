@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-login",
@@ -8,7 +9,11 @@ import { Component, OnInit } from "@angular/core";
 export class LoginComponent implements OnInit {
   username: string = "";
   userpass: string = "";
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {}
+
+  login() {
+    this.http.post("", {}).subscribe(resp => {});
+  }
 }
