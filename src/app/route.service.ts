@@ -15,8 +15,15 @@ export class RouteService {
   }
 
   public isAuthenticated(): boolean {
-    debugger;
     const token = localStorage.getItem("token");
     return Boolean(token);
+  }
+
+  public setAuth(tokenValue: string) {
+    localStorage.setItem("token", tokenValue);
+  }
+
+  public isPrivUser(): boolean {
+    return true;
   }
 }

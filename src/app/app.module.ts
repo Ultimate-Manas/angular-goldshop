@@ -11,11 +11,12 @@ import { LayoutComponent } from "./layout/layout.component";
 import { CheckRouteGuard } from "./check-route.guard";
 import { RouteService } from "./route.service";
 import { LoginComponent } from "./login/login.component";
+import { EstimateComponent } from "./estimate/estimate.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: HelloComponent,
+    component: EstimateComponent,
     canActivate: [CheckRouteGuard]
   },
   {
@@ -36,7 +37,13 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  declarations: [AppComponent, HelloComponent, LayoutComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    LayoutComponent,
+    LoginComponent,
+    EstimateComponent
+  ],
   bootstrap: [LayoutComponent],
   providers: [RouteService, CheckRouteGuard]
 })
