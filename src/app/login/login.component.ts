@@ -20,8 +20,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   login() {
-    if (this.username == "manas" && this.userpass == "1234") {
-      this.routeService.setAuth("true");
+    if (
+      (this.username == "manas" && this.userpass == "1234") ||
+      (this.username == "user" && this.userpass == "1234")
+    ) {
+      var isPriv = false;
+      if (this.username == "manas") {
+        isPriv = true;
+      } else {
+        isPriv = false;
+      }
+      this.routeService.setAuth("true", isPriv);
       this.route.navigate([""]);
     }
     //this.http.post("", {}).subscribe(resp => {});

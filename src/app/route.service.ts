@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class RouteService {
+  isPriv: boolean = false;
   constructor(private http: HttpClient) {}
 
   public validateAuth(userName, userPassword) {
@@ -19,11 +20,12 @@ export class RouteService {
     return Boolean(token);
   }
 
-  public setAuth(tokenValue: string) {
+  public setAuth(tokenValue: string, isPriv: boolean) {
+    this.isPriv = isPriv;
     localStorage.setItem("token", tokenValue);
   }
 
   public isPrivUser(): boolean {
-    return true;
+    return this.isPriv;
   }
 }
